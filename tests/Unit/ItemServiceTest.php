@@ -20,6 +20,9 @@ class ItemServiceTest extends TestCase
         $this->item2 = new Item(2, 'Item Name', 10, false, true);;
     }
 
+    /**
+     * Add new item (dvd or book)
+     */
     public function test_add_item()
     {
         $this->itemService->addItem($this->item1);
@@ -28,6 +31,9 @@ class ItemServiceTest extends TestCase
         $this->assertCount(1, $items);
     }
 
+    /**
+     * Check items
+     */
     public function test_get_item()
     {
         $this->itemService->addItem($this->item1);
@@ -40,6 +46,9 @@ class ItemServiceTest extends TestCase
         $this->assertNull($notFoundItem);
     }
 
+    /**
+     * Remove item
+     */
     public function test_delete_item()
     {
         $this->itemService->addItem($this->item1);
@@ -50,6 +59,9 @@ class ItemServiceTest extends TestCase
         $this->assertCount(1, $items);
     }
 
+    /**
+     * Get a list of items
+     */
     public function test_list_items()
     {
         $this->itemService->addItem($this->item1);

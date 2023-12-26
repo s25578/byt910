@@ -14,11 +14,17 @@ class CustomerTest extends TestCase
         $this->user = new Customer(1, 'name', '123', 'test@test.com', []);
     }
 
+    /**
+     * Get a list of owned book
+     */
     public function test_get_book_owned()
     {
         $this->assertEquals([], $this->user->getBookOwned());
     }
 
+    /**
+     * Set a list of book and check
+     */
     public function test_set_book_owned()
     {
         $this->user->setBookOwned([1,2,3]);

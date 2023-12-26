@@ -23,11 +23,17 @@ class WishlistTest extends TestCase
         $this->item2 = new Item(2, 'Item 2', 20, false, true);
     }
 
+    /**
+     * check customer from whishlist
+     */
     public function test_get_customer()
     {
         $this->assertEquals($this->customer, $this->wishlist->getCustomer());
     }
 
+    /**
+     * set a customer to wishlist
+     */
     public function test_set_customer()
     {
         $newCustomer = new Customer(2, 'name', '12334', 'test2@test.com', []);
@@ -35,17 +41,26 @@ class WishlistTest extends TestCase
         $this->assertEquals($newCustomer, $this->wishlist->getCustomer());
     }
 
+    /**
+     * get and check items from wishlist
+     */
     public function test_get_items()
     {
         $this->assertEquals([], $this->wishlist->getItems());
     }
 
+    /**
+     * add item to wishlist
+     */
     public function test_add_item()
     {
         $this->wishlist->addItem($this->item1);
         $this->assertEquals([$this->item1], $this->wishlist->getItems());
     }
 
+    /**
+     * remove item from wishlist
+     */
     public function test_remove_item()
     {
         $this->wishlist->addItem($this->item1);

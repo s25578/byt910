@@ -13,11 +13,17 @@ class AdministratorTest extends TestCase
         $this->user = new Administrator(1, 'name', '123', 'test@test.com', 'senior seller');
     }
 
+    /**
+     * Check title
+     */
     public function test_get_title()
     {
         $this->assertEquals('senior seller', $this->user->getTitle());
     }
 
+    /**
+     * Set and check title
+     */
     public function test_set_title()
     {
         $this->user->setTitle('new title');

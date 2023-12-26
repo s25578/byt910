@@ -18,12 +18,18 @@ class NotificationServiceTest extends TestCase
         $this->notification = new Notification(1, 1, 'notification', time());
     }
 
+    /**
+     * add notification to user and check
+     */
     public function test_add_notification() {
 
         $this->notificationService->addNotification($this->notification);
         $this->assertCount(1, $this->notificationService->listNotifications());
     }
 
+    /**
+     * get added notification and check
+     */
     public function test_get_notification() {
 
         $this->notificationService->addNotification($this->notification);
@@ -32,6 +38,9 @@ class NotificationServiceTest extends TestCase
         $this->assertEquals($this->notification, $retrievedNotification);
     }
 
+    /**
+     * remove notification and check the list
+     */
     public function test_delete_notification() {
 
         $this->notificationService->addNotification($this->notification);
