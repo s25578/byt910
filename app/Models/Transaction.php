@@ -5,10 +5,25 @@ namespace App\Models;
 class Transaction
 {
     private int $id;
-    private string $userId;
+    private int $userId;
     private int $createdAt;
     private int $itemId;
     private float $price;
+
+    public function __construct(
+        int $id,
+        int $userId,
+        int $createdAt,
+        int $itemId,
+        float $price
+    )
+    {
+        $this->id = $id;
+        $this->userId = $userId;
+        $this->createdAt = $createdAt;
+        $this->itemId = $itemId;
+        $this->price = $price;
+    }
 
     public function getId(): int
     {
@@ -59,6 +74,5 @@ class Transaction
     {
         $this->price = $price;
     }
-
 
 }
