@@ -35,7 +35,7 @@ class Transaction
         $this->id = $id;
     }
 
-    public function getUserId(): string
+    public function getUserId(): int
     {
         return $this->userId;
     }
